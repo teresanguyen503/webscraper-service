@@ -81,7 +81,7 @@ driver.close()
 
 
 with open("preworkout.json", "w") as outfile:
-    json.dump(object_list, outfile
+    json.dump(object_list, outfile)
 
 
 app = Flask(__name__)
