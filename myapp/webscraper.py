@@ -21,5 +21,11 @@ driver = webdriver.Chrome(
     options=options
 )
 
+url = "https://www.vitaminshoppe.com/search/categories/pre-workout?search=pre%20workout"
+driver.get(url)
+time.sleep(5)
+html = driver.page_source
+soup = BeautifulSoup(html, "html.parser")
+
 driver.close()
 
