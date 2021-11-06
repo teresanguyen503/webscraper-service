@@ -82,3 +82,16 @@ driver.close()
 
 with open("preworkout.json", "w") as outfile:
     json.dump(object_list, outfile
+
+
+app = Flask(__name__)
+api = Api(app)
+
+class PreWorkout(Resource):
+    def get(self): 
+        return object_list, 200
+
+api.add_resource(PreWorkout, '/pre-workout')
+
+if __name__ == '__main__': 
+    app.run(port=8000)
