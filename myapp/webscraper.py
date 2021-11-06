@@ -27,5 +27,9 @@ time.sleep(5)
 html = driver.page_source
 soup = BeautifulSoup(html, "html.parser")
 
+page_text = soup.find(class_="victory-pagination").ul.find_all('li')
+pages = int(str(page_text).split("/")[-3].split(">")[-1][:-1])
+print(pages)
+
 driver.close()
 
