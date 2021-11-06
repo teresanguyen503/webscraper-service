@@ -1,3 +1,5 @@
+from flask import Flask 
+from flask_restful import Api, Resource
 import bs4
 from bs4 import BeautifulSoup
 import requests
@@ -9,6 +11,7 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.keys import Keys
 import time 
 from selenium.webdriver.common.by import By
+import json 
 
 
 service = Service(ChromeDriverManager().install())
@@ -76,3 +79,6 @@ for page in range(1, pages + 1):
 
 driver.close()
 
+
+with open("preworkout.json", "w") as outfile:
+    json.dump(object_list, outfile
